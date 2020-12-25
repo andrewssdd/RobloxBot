@@ -35,7 +35,7 @@ def getHandleByTitle(title):
     win32gui.EnumWindows(enum_cb, toplist)
     win = [(hwnd, t) for hwnd, t in winlist if title == t]
     if len(win) == 0:
-        raise RuntimeError('Roblox window not detected. Is Roblox running?')
+        raise RuntimeError('window with title "%s" not detected.'%title)
     return win[0][0]
 
 def moveWindow(handle, x, y, width = None, height = None):
