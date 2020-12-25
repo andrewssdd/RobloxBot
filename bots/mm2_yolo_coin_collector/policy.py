@@ -28,7 +28,7 @@ def perform_actions(objects):
     randomPro = 0.1  # probability the perform a random motion
     actionDuration = .25  # min duration for an action in sec
     turnProb = 0.3 # probability to turn when in random motion
-    runAwayProb = 0.5 # Probability to run away from people
+    runAwayProb = 0. # Probability to run away from people
     dx = 0
     dy = 0
     actions = []
@@ -41,11 +41,11 @@ def perform_actions(objects):
         return dx, dy, actions, msg
 
     # policy
-    if (numCoinsDetected > 0 or numPersionDetected > 0) and random.random() < randomPro:
+    if (numCoinsDetected > 0 or numPersionDetected > 0) and random.random() > randomPro:
         # Perform policy action
 
         # If see a person, move away
-        if len(objects[PERSON]) > 0 and random.random()>runAwayProb:
+        if len(objects[PERSON]) > 0 and random.random() < runAwayProb:
             # run away from people, they can be murders!
             xm = np.mean([xy[0] for xy in objects[PERSON]])
             ym = np.mean([xy[1] for xy in objects[PERSON]])
