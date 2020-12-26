@@ -28,7 +28,7 @@ def perform_actions(objects):
     randomPro = 0.1  # probability the perform a random motion
     actionDuration = .25  # min duration for an action in sec
     turnProb = 0.3 # probability to turn when in random motion
-    runAwayProb = 0. # Probability to run away from people
+    runAwayProb = 0.2 # Probability to run away from people
     dx = 0
     dy = 0
     actions = []
