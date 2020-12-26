@@ -3,7 +3,7 @@
 See this accompanying article for implementation details.
 
 # RobloxBot
-A bot that perform policy based on Roblox pixel video input.
+Bots that perform policy actions based on Roblox pixel video input.
 
 Bots for `Murder Mystery 2` to collect coins are available.
 
@@ -12,6 +12,13 @@ Windows systems only. GPU is required for  Yolov5-based detector otherwise it wi
 
 ## Install
 Packages and versions I used are listed in `requirements.txt`. 
+
+## Software structure
+Game-specific codes are under `bots/` directory, with one folder per bot.
+
+Generic functions that are shared by all bots are outside of the bots directory.
+- `roblox/` directory contains API to capture screens, emulate keyboard/mouse controls and other helper functions.
+- `yolo/` directory contains Yolov5 and wrapper functions.
 
 ## Bots available
 ### Yolo-based object detector
@@ -22,7 +29,7 @@ cd bots/mm2_yolo_coin_collector/
 python main.py
 ```
 
-All pretrained weights are under `weights` directory.
+All pretrained weights are under `weights/` directory.
 
 The bot either walks to the coins, if detected, or perform random motions.
 
