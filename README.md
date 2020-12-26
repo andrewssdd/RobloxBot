@@ -1,6 +1,6 @@
 ![](gifs/coin_collect_person2.gif)
 
-See this accompanying article for implementation details.
+See this [accompanying article](https://ctawong.com/articles/roblox_bot.html) for implementation details.
 
 # RobloxBot
 Bots that perform policy actions based on Roblox pixel video input.
@@ -56,31 +56,7 @@ python main.py --weights weights/yolo_coin_person_m_v2.pt
 ```
 
 ## Training your own Yolo detector
-### **Step 1**: Collect training images
-Run a bot with parameter `--save-stream` to save training images. E.g.
-```
-cd bots/mm2_yolo_coin_collector
-python main.py --weights weights/yolo_coin_person_m_v2.pt --save-stream
-```
-The saved images can be found under `bots/mm2_yolo_coin_collector/images`
-
-### **Step 2**: Label images
-Label images with [OpenLabeling](https://github.com/ctawong/OpenLabeling) tool.
-- Clone the repository:
-  ```
-  git clone https://github.com/ctawong/OpenLabeling.git
-  ```
-- Put training images in `main/input` folder.
-- Edit `main/class_list.txt` to add or remove classes.
-- Run the codes 
-  ```
-  cd main
-  python main.py
-  ```
-- The output Yolo annotation files will be in `output`. 
-
-### **Step 3**: Train Yolo model
-Train detector using the preset [Yolov5 for Murder Mystery 2](https://github.com/ctawong/yolov5_mm2) repository.  Follow training instructions in `README.md`.
+See [accompanying article](https://ctawong.com/articles/roblox_bot.html#appendix-train-your-own-bot).
 
 ## Additional Example
 ### Video of Yolo bot detecting coins only.
